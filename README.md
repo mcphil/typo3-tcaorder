@@ -2,7 +2,9 @@
 
 # Respect order from multiple select field in the backend in the frontend-output - demo extension for Typo3 9.5
 
-The problem is that Extbase in Typo3 9.5 does not automagically take care of the sort order in the Backend when using 1:n-relations with multiple selects. Additionally there is no way to set the Sql-Order as it would be necessary when querying for records matching uid in e.g. '5,4,3,2,6'. The following would be necessary for proper sorting:
+The problem is that Extbase in Typo3 9.5 does not automagically take care of the sort order in the backend when using 1:n-relations with multiple selects. 
+
+Additionally there is no way to set the Sql-Order as it would be necessary when querying for records matching uid in e.g. '5,4,3,2,6'. The following order statement would be necessary for proper sorting:
 
   ORDER BY FIELD (uid, '5,4,3,2,6')
 
