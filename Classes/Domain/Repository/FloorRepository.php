@@ -24,4 +24,16 @@ class FloorRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     protected $defaultOrderings = [
     'sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
 ];
+
+    /**
+     * Find by uids
+     * 
+     * @param array Array containing uids
+     */
+    public function findSortedFloorsInTheHouse($uids) {
+        foreach ($uids as $uid) {
+            $floors[] =  $this->findByIdentifier($uid);
+        }
+        return $floors;
+    }
 }

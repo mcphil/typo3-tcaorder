@@ -29,10 +29,16 @@ class House extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * floorsInTheHouse
      * 
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Smt\Tcaorder\Domain\Model\Floor>
-     * @cascade remove
+     * @var string
      */
-    protected $floorsInTheHouse = null;
+    protected $floorsInTheHouse = '';
+
+    /**
+     * sortedFloorsInTheHouse
+     * 
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Smt\Tcaorder\Domain\Model\Floor>
+     */
+    protected $sortedFloorsInTheHouse = null;
 
     /**
      * Returns the name
@@ -44,16 +50,6 @@ class House extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         return $this->name;
     }
 
-    /**
-     * Sets the name
-     * 
-     * @param string $name
-     * @return void
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
 
     /**
      * __construct
@@ -79,45 +75,33 @@ class House extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Adds a Floor
+     * Returns the sortedFloorsInTheHouse
+     *      
+     * floorRepository
      * 
-     * @param \Smt\Tcaorder\Domain\Model\Floor $floorsInTheHouse
-     * @return void
+     * @var \Smt\Tcaorder\Domain\Repository\FloorRepository
+     * @inject
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Smt\Tcaorder\Domain\Model\Floor> $floorsInTheHouse
      */
-    public function addFloorsInTheHouse(\Smt\Tcaorder\Domain\Model\Floor $floorsInTheHouse)
-    {
-        $this->floorsInTheHouse->attach($floorsInTheHouse);
-    }
 
-    /**
-     * Removes a Floor
-     * 
-     * @param \Smt\Tcaorder\Domain\Model\Floor $floorsInTheHouseToRemove The Floor to be removed
-     * @return void
-     */
-    public function removeFloorsInTheHouse(\Smt\Tcaorder\Domain\Model\Floor $floorsInTheHouseToRemove)
+    protected $floorRepository = null;
+
+    public function getsortedFloorsInTheHouse()
     {
-        $this->floorsInTheHouse->detach($floorsInTheHouseToRemove);
+        $uids = explode(',',$this->floorsInTheHouse);
+        $sortedFloorsInTheHouse = $this->floorRepository->findSortedFloorsInTheHouse($uids);
+        return $sortedFloorsInTheHouse;
     }
 
     /**
      * Returns the floorsInTheHouse
      * 
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Smt\Tcaorder\Domain\Model\Floor> $floorsInTheHouse
+     * @return string $floorsInTheHouse
      */
     public function getFloorsInTheHouse()
     {
         return $this->floorsInTheHouse;
     }
 
-    /**
-     * Sets the floorsInTheHouse
-     * 
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Smt\Tcaorder\Domain\Model\Floor> $floorsInTheHouse
-     * @return void
-     */
-    public function setFloorsInTheHouse(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $floorsInTheHouse)
-    {
-        $this->floorsInTheHouse = $floorsInTheHouse;
-    }
 }

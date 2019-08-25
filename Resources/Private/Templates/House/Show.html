@@ -12,12 +12,12 @@
 
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
-	<f:section name="content">
-		<h1>Single View for House</h1>
-
-		<f:flashMessages />
-		<f:render partial="House/Properties" arguments="{house:house}" />
-		<f:link.action action="list">Back to list</f:link.action><br />
-		<f:link.action action="new">New House</f:link.action>
+	<f:section name="content"><f:debug title="">{_all}</f:debug>
+		<h1>{house.name}</h1>
+		<h2>Floors:</h2>
+		<f:for each="{house.sortedFloorsInTheHouse}" as="floor">
+			<p>{floor.name}</p>
+			
+		</f:for>
 	</f:section>
 </html>

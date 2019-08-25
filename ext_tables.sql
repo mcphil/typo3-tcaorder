@@ -4,7 +4,7 @@
 CREATE TABLE tx_tcaorder_domain_model_house (
 
 	name varchar(255) DEFAULT '' NOT NULL,
-	floors_in_the_house int(11) unsigned DEFAULT '0' NOT NULL,
+	floors_in_the_house text,
 
 );
 

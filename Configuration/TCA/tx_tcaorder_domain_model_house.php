@@ -130,22 +130,13 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:tcaorder/Resources/Private/Language/locallang_db.xlf:tx_tcaorder_domain_model_house.floors_in_the_house',
             'config' => [
-                'type' => 'inline',
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'enableMultiSelectFilterTextfield' => true,
                 'foreign_table' => 'tx_tcaorder_domain_model_floor',
-                'foreign_field' => 'house',
-                'foreign_sortby' => 'sorting',
+                'minitems' => 0,
                 'maxitems' => 9999,
-                'appearance' => [
-                    'collapseAll' => 0,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'useSortable' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
             ],
-
-        ],
-    
+        ],  
     ],
 ];
