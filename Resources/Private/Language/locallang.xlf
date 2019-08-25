@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-08-25T16:08:18Z" product-name="tcaorder">
+		<header/>
+		<body>
+			<trans-unit id="tx_tcaorder_domain_model_house">
+				<source>House</source>
+			</trans-unit>
+			<trans-unit id="tx_tcaorder_domain_model_house.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_tcaorder_domain_model_house.floors_in_the_house">
+				<source>Floors In The House</source>
+			</trans-unit>
+			<trans-unit id="tx_tcaorder_domain_model_floor">
+				<source>Floor</source>
+			</trans-unit>
+			<trans-unit id="tx_tcaorder_domain_model_floor.name">
+				<source>Name</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

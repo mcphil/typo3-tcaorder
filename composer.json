@@ -1,0 +1,24 @@
+{
+    "name": "smt/tcaorder",
+    "type": "typo3-cms-extension",
+    "description": "Demo-Extension how to keep sort order from a Backend-Selectbox (aka selectMultipleSideBySide) without mm-Table.",
+    "authors": [],
+    "version": "1.0.0",
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Smt\\Tcaorder\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Smt\\Tcaorder\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "tcaorder": "self.version",
+        "typo3-ter/tcaorder": "self.version"
+    }
+}
