@@ -1,11 +1,5 @@
 # typo3-tcaorder
 
-# Depreciation Note
-
-The Workaround is not neccessary, You can use this in your QueryBuilder-Statement instead:
-
-  $queryBuilder->add('orderBy', 'FIELD(eventtype, 0, 4, 1, 2, 3)');
-
 # Respect order from multiple select field in the backend in the frontend-output - demo extension for Typo3 9.5
 
 The problem is that Extbase in Typo3 9.5 does not automagically take care of the sort order in the backend when using 1:n-relations with multiple selects. 
